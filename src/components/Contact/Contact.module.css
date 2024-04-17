@@ -6,9 +6,10 @@
   color: white;
   gap: 10px;
   padding: 10px;
-  border: 2px solid black;
+  border: 1px solid black;
   border-radius: 10px;
   width: 400px;
+  box-shadow: 0 0 5px 1px black;
 }
 
 .button {

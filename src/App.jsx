@@ -1,27 +1,31 @@
+import { Route, Routes } from "react-router-dom";
+import Layout from "./components/Layout/Layout";
+import HomePage from "./pages/HomePage/HomePage";
+import ContactsPage from "./pages/ContactsPage/ContactsPage";
+import NotFound from "./pages/NotFound/NotFound";
+import RegistrationPage from "./pages/RegistrationPage/RegistrationPage";
+import LoginPage from "./pages/LoginPage/LoginPage";
+import { useDispatch } from "react-redux";
 import { useEffect } from "react";
-import ContactForm from "./components/ContactForm/ContactForm";
-import ContactList from "./components/ContactList/ContactList";
-import SearchBox from "./components/SearchBox/SearchBox";
-import { useDispatch, useSelector } from "react-redux";
-import { fetchContactsThunk } from "./redux/contactsOps";
-import { selectLoading } from "./redux/contactsSlice";
-import Loader from "./components/Loader/Loader";
+import { refreshThunk } from "./redux/auth/operations";
 
 const App = () => {
-  const loading = useSelector(selectLoading);
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(fetchContactsThunk());
+    dispatch(refreshThunk());
   }, [dispatch]);
-
   return (
-    <div>
-      <h1 style={{ textAlign: "center", color: "white" }}>Phonebook</h1>
-      <ContactForm />
-      {loading && <Loader />}
-      <SearchBox />
-      <ContactList />
-    </div>
+    <>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<HomePage />} />
+          <Route path="contacts" element={<ContactsPage />} />
+        </Route>
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/register" element={<RegistrationPage />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </>
   );
 };
 

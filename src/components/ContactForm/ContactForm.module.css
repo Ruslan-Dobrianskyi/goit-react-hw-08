@@ -5,12 +5,13 @@
   align-items: center;
   gap: 10px;
   padding: 10px;
-  border: 2px solid black;
+  border: 1px solid black;
   border-radius: 10px;
   margin: 0 auto;
   width: 400px;
   margin-bottom: 50px;
   background-color: rgb(116, 140, 141);
+  box-shadow: 0 0 9px 5px black;
 }
 
 .input {
@@ -33,7 +34,7 @@
   cursor: pointer;
   border: none;
   &:hover {
-    background-color: rgb(241, 27, 27);
+    background-color: rgba(228, 128, 211, 0.693);
     transition: all 0.5s;
     transform: scale(1.1);
   }

@@ -1,0 +1,21 @@
+.NotFound {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.link {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  font-size: 30px;
+  font-weight: 700;
+  padding: 10px;
+  background-color: rgb(158, 4, 132);
+  border-radius: 10px;
+  cursor: pointer;
+  color: white;
+}
