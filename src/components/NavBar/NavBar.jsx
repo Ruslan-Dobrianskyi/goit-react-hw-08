@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { selectIsLoggedIn, selectUser } from "../../redux/auth/slice";
 import { logoutThunk } from "../../redux/auth/operations";
 import clsx from "clsx";
+import { toast } from "react-toastify";
 
 const buildLinkClass = ({ isActive }) => {
   return clsx(s.item, isActive && s.active);
@@ -15,11 +16,13 @@ const NavBar = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
   return (
     <div className={s.navbar}>
-      <NavLink className={buildLinkClass} to="/">
-        Home
-      </NavLink>
-      {/* <Link to="/">Phone Book</Link> */}
-      <p>{user.email}</p>
+      <h2>
+        <NavLink className={buildLinkClass} to="/">
+          Home
+        </NavLink>
+      </h2>
+      <p> {user.email}</p>
+
       <ul className={s.list}>
         <li>
           <NavLink className={buildLinkClass} to="/contacts">
@@ -42,7 +45,13 @@ const NavBar = () => {
         )}
 
         {isLoggedIn && (
-          <button onClick={() => dispatch(logoutThunk())} className={s.button}>
+          <button
+            onClick={() =>
+              toast.success("Bye Bye " + user.email + " ") &&
+              dispatch(logoutThunk())
+            }
+            className={s.button}
+          >
             Logout
           </button>
         )}

@@ -4,11 +4,14 @@ import { useSelector } from "react-redux";
 import s from "./ContactList.module.css";
 import { deleteContactThunk } from "../../redux/contacts/operations";
 import { selectFilteredContactsMemo } from "../../redux/selectors";
+import { toast } from "react-toastify";
+
 const ContactList = () => {
   const contacts = useSelector(selectFilteredContactsMemo);
   const dispatch = useDispatch();
   const handleDelete = (id) => {
     dispatch(deleteContactThunk(id));
+    toast.info(`Delete contact`);
   };
   return (
     <div className={s.list}>

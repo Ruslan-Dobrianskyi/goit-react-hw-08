@@ -5,12 +5,14 @@ import * as Yup from "yup";
 import { ErrorMessage } from "formik";
 import { useDispatch } from "react-redux";
 import { addContactThunk } from "../../redux/contacts/operations";
+import { toast } from "react-toastify";
 
 const ContactForm = () => {
   const dispatch = useDispatch();
 
   const handleSubmit = (data, options) => {
     dispatch(addContactThunk(data));
+    toast.success(`Add contact`);
     options.resetForm();
   };
   const initialValues = {

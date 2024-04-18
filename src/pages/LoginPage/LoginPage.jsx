@@ -2,6 +2,7 @@ import { useDispatch } from "react-redux";
 import AuthForm from "../../components/AuthForm/AuthForm";
 import { loginThunk } from "../../redux/auth/operations";
 import * as yup from "yup";
+import { toast } from "react-toastify";
 
 const LoginPage = () => {
   const dispatch = useDispatch();
@@ -18,6 +19,7 @@ const LoginPage = () => {
   });
 
   const handleSubmit = (values) => {
+    toast.success(`Welcome`);
     dispatch(loginThunk(values));
   };
   const initialValues = {

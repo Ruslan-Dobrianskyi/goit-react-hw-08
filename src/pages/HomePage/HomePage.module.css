@@ -1,9 +1,10 @@
 .home {
   display: flex;
-  flex-direction: column;
+  gap: 20px;
   justify-content: center;
-  text-align: center;
-  padding: 30px;
+  align-items: center;
+  font-size: 50px;
+  font-weight: 700;
+  height: 70vh;
   color: white;
-  font-size: 30px;
 }
