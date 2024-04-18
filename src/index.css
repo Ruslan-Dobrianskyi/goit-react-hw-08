@@ -3,7 +3,11 @@
 body {
   font-family: sans-serif;
   line-height: 1.5;
-  background-color: rgb(158, 4, 132);
+  background-image: linear-gradient(
+    to right,
+    rgb(158, 4, 132),
+    rgb(116, 140, 141)
+  );
 }
 
 h1,
