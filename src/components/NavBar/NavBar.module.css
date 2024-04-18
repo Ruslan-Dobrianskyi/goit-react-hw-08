@@ -22,6 +22,11 @@
 
 .item {
   color: white;
+  text-decoration: none;
+}
+
+.active {
+  color: rgb(219, 6, 184);
 }
 
 .button {

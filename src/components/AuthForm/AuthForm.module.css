@@ -13,13 +13,6 @@
   box-shadow: 0 0 9px 5px black;
   border-radius: 10px;
 }
-.input {
-  padding: 5px 15px;
-  border: 2px solid black;
-  border-radius: 10px;
-  box-shadow: 2px 2px 4px 1px gray;
-  font-size: 1.5rem;
-}
 
 .button {
   padding: 5px 15px;

@@ -1,0 +1,9 @@
+.home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  padding: 30px;
+  color: white;
+  font-size: 30px;
+}

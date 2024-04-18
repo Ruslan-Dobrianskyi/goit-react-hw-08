@@ -3,8 +3,8 @@ import ContactForm from "../../components/ContactForm/ContactForm";
 import SearchBox from "../../components/SearchBox/SearchBox";
 import Loader from "../../components/Loader/Loader";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchContactsThunk } from "../../redux/contactsOps";
-import { selectLoading } from "../../redux/contactsSlice";
+import { fetchContactsThunk } from "../../redux/contacts/operations";
+import { selectLoading } from "../../redux/contacts/slice";
 import { useEffect } from "react";
 
 const ContactsPage = () => {

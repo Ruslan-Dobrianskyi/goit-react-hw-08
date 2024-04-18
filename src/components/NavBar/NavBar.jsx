@@ -1,8 +1,13 @@
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import s from "./NavBar.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { selectIsLoggedIn, selectUser } from "../../redux/auth/slice";
 import { logoutThunk } from "../../redux/auth/operations";
+import clsx from "clsx";
+
+const buildLinkClass = ({ isActive }) => {
+  return clsx(s.item, isActive && s.active);
+};
 
 const NavBar = () => {
   const dispatch = useDispatch();
@@ -10,28 +15,26 @@ const NavBar = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
   return (
     <div className={s.navbar}>
-      <Link to="/">Phone Book</Link>
+      <NavLink className={buildLinkClass} to="/">
+        Home
+      </NavLink>
+      {/* <Link to="/">Phone Book</Link> */}
       <p>{user.email}</p>
       <ul className={s.list}>
         <li>
-          <NavLink className={s.item} to="/">
-            Home
-          </NavLink>
-        </li>
-        <li>
-          <NavLink className={s.item} to="/contacts">
+          <NavLink className={buildLinkClass} to="/contacts">
             Contacts
           </NavLink>
         </li>
         {!isLoggedIn && (
           <>
             <li>
-              <NavLink className={s.item} to="/login">
+              <NavLink className={buildLinkClass} to="/login">
                 Login
               </NavLink>
             </li>
             <li>
-              <NavLink className={s.item} to="/register">
+              <NavLink className={buildLinkClass} to="/register">
                 Register
               </NavLink>
             </li>

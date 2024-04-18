@@ -2,7 +2,7 @@ import Contact from "../Contact/Contact";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
 import s from "./ContactList.module.css";
-import { deleteContactThunk } from "../../redux/contactsOps";
+import { deleteContactThunk } from "../../redux/contacts/operations";
 import { selectFilteredContactsMemo } from "../../redux/selectors";
 const ContactList = () => {
   const contacts = useSelector(selectFilteredContactsMemo);

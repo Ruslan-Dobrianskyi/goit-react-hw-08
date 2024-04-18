@@ -1,32 +1,31 @@
-import { Field, Formik, Form } from "formik";
+import { Formik, Form } from "formik";
 import s from "./AuthForm.module.css";
 import { Link } from "react-router-dom";
+import CustomInput from "./CustomInput";
 
-const AuthForm = ({ title, onSubmit, initialValues, type }) => {
+const AuthForm = ({
+  title,
+  onSubmit,
+  initialValues,
+  type,
+  validationSchema,
+}) => {
   return (
     <div className={s.container}>
-      <Formik onSubmit={onSubmit} initialValues={initialValues}>
+      <Formik
+        validationSchema={validationSchema}
+        onSubmit={onSubmit}
+        initialValues={initialValues}
+      >
         <Form className={s.form}>
           {type === "register" && (
-            <Field
-              className={s.input}
-              type="text"
-              name="name"
-              placeholder="Enter your name"
-            />
+            <CustomInput name="name" placeholder="Enter your name" />
           )}
-
-          <Field
-            className={s.input}
-            type="text"
-            name="email"
-            placeholder="Enter your email"
-          />
-          <Field
-            className={s.input}
-            type="password"
+          <CustomInput name="email" placeholder="Enter your email" />
+          <CustomInput
             name="password"
             placeholder="Enter your password"
+            type="password"
           />
           <button className={s.button} type="submit">
             {title}

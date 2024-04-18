@@ -1,0 +1,38 @@
+.input {
+  padding: 5px 15px;
+  border: 2px solid black;
+  border-radius: 10px;
+  box-shadow: 2px 2px 4px 1px gray;
+  font-size: 1.5rem;
+  position: relative;
+  width: 400px;
+}
+.error {
+  color: red;
+}
+
+.label {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-size: 20px;
+  color: white;
+}
+
+.button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.icon {
+  font-size: 25px;
+}
+
+.inputContainer {
+  position: relative;
+}
